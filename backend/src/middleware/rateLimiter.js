@@ -10,6 +10,8 @@ const rateLimiter = async (req, res, next) => {
 
     next();
   } catch (err) {
-    console.log(`Error: ${err}`)
+    console.log(`Error: ${err}`);
   }
 };
+
+module.exports = rateLimiter;

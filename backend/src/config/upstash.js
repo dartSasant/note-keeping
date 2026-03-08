@@ -1,5 +1,5 @@
-const Ratelimit = require("@upstash/ratelimit");
-const Redis = require("@upstash/redis");
+const {Ratelimit} = require("@upstash/ratelimit");
+const {Redis} = require("@upstash/redis");
 const dotenv = require("dotenv");
 dotenv.config();
 
