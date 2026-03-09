@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import toast from "react-hot-toast";
 
 import api from "../lib/axios.js";
@@ -31,7 +31,7 @@ const HomePage = () => {
     fetchNotes();
   }, []);
   return (
-    <div>
+    <div className="min-h-screen">
       <Navbar />
       {isRateLimited && <RateLimitedUI />}
       <div className="max-w-7x mx-auto p-4 mt-6">
@@ -47,7 +47,7 @@ const HomePage = () => {
             ))}
           </div>
         )}
-        {notes.length === 0 && !isRateLimited && <NotesNotFound/>}
+        {notes.length === 0 && !isRateLimited && <NotesNotFound />}
       </div>
     </div>
   );
