@@ -2,12 +2,14 @@ import { ArrowLeftIcon } from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "react-router";
 import { toast } from "react-hot-toast";
-import api from "../lib/axios"
+import api from "../lib/axios";
+import { useNavigate } from "react-router";
 
 const CreatePage = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,6 +28,7 @@ const CreatePage = () => {
       });
 
       toast.success("Notes Successfully Created");
+      navigate("/")
       setTitle("");
       setContent("");
     } catch (error) {
